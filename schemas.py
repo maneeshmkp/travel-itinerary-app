@@ -1,13 +1,13 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional
-from datetime import date
+from datetime import datetime
 
 # Accommodation schemas
 class AccommodationBase(BaseModel):
     name: str
     location: str
-    check_in_date: date
-    check_out_date: date
+    check_in_date: datetime
+    check_out_date: datetime
     nights: int
 
 
@@ -28,7 +28,7 @@ class TransferBase(BaseModel):
     from_location: str
     to_location: str
     transport_type: str
-    date: date
+    date: datetime
 
 
 class TransferCreate(TransferBase):
@@ -47,7 +47,7 @@ class Transfer(TransferBase):
 class ActivityBase(BaseModel):
     name: str
     location: str
-    date: date
+    date: datetime
     duration_hours: float
     description: Optional[str] = None
 
@@ -79,7 +79,7 @@ class ItineraryCreate(ItineraryBase):
 
 class Itinerary(ItineraryBase):
     id: int
-    created_at: Optional[date] = None
+    created_at: Optional[datetime] = None
     accommodations: List[Accommodation] = []
     transfers: List[Transfer] = []
     activities: List[Activity] = []

@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException, Query
+from fastapi import FastAPI, Depends, HTTPException, Path
 from sqlalchemy.orm import Session
 import models
 import schemas
@@ -18,9 +18,10 @@ def get_db():
 
 @app.get("/api/recommendations/{nights}", response_model=List[schemas.RecommendedItinerary])
 def get_recommendations(
-    nights: int = Query(..., ge=2, le=8), 
+    nights: int = Path(..., ge=2, le=8),  
     db: Session = Depends(get_db)
 ):
+
     """
     Get recommended itineraries for a specific duration (2-8 nights)
     """
