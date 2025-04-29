@@ -1,0 +1,56 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pdb
+*.log
+*.swp
+
+# Virtual Environment
+venv/
+env/
+.venv/
+.env/
+
+# Database
+*.sqlite3
+*.db
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Docker
+*.dockerignore
+
+# FastAPI
+*.db-journal
+
+# Configuration Files
+*.env
+
+# Migrations
+alembic_version.py
+
+# Coverage Reports
+.coverage
+*.coveragerc
+coverage.xml
+*.hypothesis/
+
+# Logs
+*.log
+
+# Test artifacts
+nosetests.xml
+test_*.xml
+coverage/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
