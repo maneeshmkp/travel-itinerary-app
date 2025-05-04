@@ -15,6 +15,10 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Travel Itinerary API!"}
+
 
 @app.get("/api/itineraries", response_model=List[schemas.Itinerary])
 def get_itineraries(

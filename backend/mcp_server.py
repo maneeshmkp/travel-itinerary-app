@@ -15,6 +15,10 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome MCP Server to the Travel Itinerary API!"}
+
 
 @app.get("/api/recommendations/{nights}", response_model=List[schemas.RecommendedItinerary])
 def get_recommendations(
